@@ -126,7 +126,7 @@ index 9df83a6..adfd341 100644
  
  bool CWinSystemAmlogic::InitWindowSystem()
  {
-+  if (CServiceBroker::GetSettings()->GetBool(CSettings::SETTING_COREELEC_AMLOGIC_NOISEREDUCTION))
++  if (CServiceBroker::GetSettingsComponent()->GetSettings()->GetBool(CSettings::SETTING_COREELEC_AMLOGIC_NOISEREDUCTION))
 +  {
 +     CLog::Log(LOGDEBUG, "CWinSystemAmlogic::InitWindowSystem -- disabling noise reduction");
 +     SysfsUtils::SetString("/sys/module/di/parameters/nr2_en", "0");

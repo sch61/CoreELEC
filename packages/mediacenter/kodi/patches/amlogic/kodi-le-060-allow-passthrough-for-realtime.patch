@@ -5,7 +5,7 @@ index bd13740..58d64da 100644
 @@ -77,8 +77,6 @@ bool CVideoPlayerAudio::OpenStream(CDVDStreamInfo hints)
  {
    CLog::Log(LOGNOTICE, "Finding audio codec for: %i", hints.codec);
-   bool allowpassthrough = !CServiceBroker::GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USEDISPLAYASCLOCK);
+   bool allowpassthrough = !CServiceBroker::GetSettingsComponent()->GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USEDISPLAYASCLOCK);
 -  if (m_processInfo.IsRealtimeStream())
 -    allowpassthrough = false;
  
@@ -13,7 +13,7 @@ index bd13740..58d64da 100644
    if (hints.profile == FF_PROFILE_DTS_HD_HRA) {
 @@ -138,8 +136,6 @@ void CVideoPlayerAudio::OpenStream(CDVDStreamInfo &hints, CDVDAudioCodec* codec)
    m_synctype = SYNC_DISCON;
-   if (CServiceBroker::GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USEDISPLAYASCLOCK))
+   if (CServiceBroker::GetSettingsComponent()->GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USEDISPLAYASCLOCK))
      m_synctype = SYNC_RESAMPLE;
 -  else if (m_processInfo.IsRealtimeStream())
 -    m_synctype = SYNC_RESAMPLE;
@@ -42,7 +42,7 @@ index bd13740..58d64da 100644
 @@ -608,7 +592,7 @@ bool CVideoPlayerAudio::SwitchCodecIfNeeded()
  {
    CLog::Log(LOGDEBUG, "CVideoPlayerAudio: stream props changed, checking for passthrough");
-   bool allowpassthrough = !CServiceBroker::GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USEDISPLAYASCLOCK);
+   bool allowpassthrough = !CServiceBroker::GetSettingsComponent()->GetSettings()->GetBool(CSettings::SETTING_VIDEOPLAYER_USEDISPLAYASCLOCK);
 -  if (m_processInfo.IsRealtimeStream() || m_synctype == SYNC_RESAMPLE)
 +  if (m_synctype == SYNC_RESAMPLE)
      allowpassthrough = false;
