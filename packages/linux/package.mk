@@ -24,8 +24,8 @@ case "$LINUX" in
     PKG_BUILD_PERF="no"
     ;;
   amlogic-3.14)
-    PKG_VERSION="b8c15607a8ad1658a16df527092842372d032749"
-    PKG_SHA256="2676ca1ec1fb7e7e2f75de91dfdf0e47cd3acec045c7e9c07b1831b91afa2d0e"
+    PKG_VERSION="cb0865267b2042647cff917b453ce674482ed5e3"
+    PKG_SHA256="9a0acbe421378b917a095e8d198f53111b9b920486e21d7b186f6058a0baec75"
     PKG_URL="https://github.com/cdu13a/linux-amlogic-1/archive/$PKG_VERSION.tar.gz"
     PKG_SOURCE_NAME="linux-$LINUX-1-$PKG_VERSION.tar.gz"
     PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET aml-dtbtools:host"
