@@ -257,13 +257,6 @@ index d8afcfebf7..68d4a8f93a 100644
      }
    },
    "PVR.Details.ChannelGroup": {
-diff --git a/xbmc/interfaces/json-rpc/schema/version.txt b/xbmc/interfaces/json-rpc/schema/version.txt
-index 501d3e2821..37a0087faa 100644
---- a/xbmc/interfaces/json-rpc/schema/version.txt
-+++ b/xbmc/interfaces/json-rpc/schema/version.txt
-@@ -1 +1 @@
--JSONRPC_VERSION 9.7.2
-+JSONRPC_VERSION 9.8.0
 diff --git a/xbmc/pvr/PVRGUIInfo.cpp b/xbmc/pvr/PVRGUIInfo.cpp
 index 708f943eaf..ebe31011b2 100644
 --- a/xbmc/pvr/PVRGUIInfo.cpp
@@ -362,12 +355,12 @@ index 7df674ad26..a1614d1c40 100644
      /*!
       * @return The path to the icon for this channel.
       */
-@@ -443,7 +448,8 @@ namespace PVR
+@@ -443,6 +448,7 @@ namespace PVR
      std::string      m_strChannelName;          /*!< the name for this channel used by XBMC */
      time_t           m_iLastWatched;            /*!< last time channel has been watched */
      bool             m_bChanged;                /*!< true if anything in this entry was changed that needs to be persisted */
--    CPVRChannelNumber m_channelNumber;         /*!< the number this channel has in the currently selected channel group */
-+    CPVRChannelNumber m_channelNumber;          /*!< the number this channel has in the currently selected channel group */
+     CPVRChannelNumber m_channelNumber;          /*!< the number this channel has in the currently selected channel group */
+     std::shared_ptr<CPVRRadioRDSInfoTag> m_rdsTag; /*! < the radio rds data, if available for the channel. */
 +    bool             m_bHasArchive;             /*!< true if this channel supports archive */
      //@}
  
